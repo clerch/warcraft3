@@ -1,9 +1,9 @@
 class Peasant < Unit
 
-  attr_accessor :health_points, :attack_power
+  attr_reader :health_points, :attack_power
 
-  def initialize (health=35,damage_received=0)
-    super
+  def initialize
+    super(35,0)
   end
 
 end

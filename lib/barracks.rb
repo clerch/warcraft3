@@ -1,9 +1,12 @@
 class Barracks
   attr_accessor :gold, :food, :lumber
+  attr_reader :health_points
 
   def initialize
     @gold = 1000
     @food = 80
+    @health_points = 500
+    @lumber = 500
   end
 
   def train_footman
@@ -35,5 +38,33 @@ class Barracks
       Peasant.new
     end
   end
+  
+  def damage(damage_received)
+    @health_points -= damage_received
+  end
+
+  def dead?
+    health_points <= 0
+  end
+
+  def train_siege_engine
+    if can_train_footman? == true
+      @gold -= 200
+      @food -= 3
+      @lumber -= 60
+      SiegeEngine.new
+    else
+      nil
+   end
+ end
+
+  def can_train_siege_engine?
+    if gold >= 200 && food >= 3 && lumber >= 60
+      true
+    end
+  end
+
+
+
 end
 
