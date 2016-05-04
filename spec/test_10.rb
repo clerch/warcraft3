@@ -14,7 +14,7 @@ describe Unit do
   describe "#damage" do
     it "should reduce the unit's health_points by the attack_power specified" do
       @unit.damage(12)
-      expect(@unit.health_points).to eq(88) # HP started at 100 but just got hit by 12 (see subject)
+      expect(@unit.health_points).to eq(88) 
     end
   end
 

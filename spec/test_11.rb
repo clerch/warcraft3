@@ -16,7 +16,7 @@ describe Barracks do
   describe "#damage" do
     it "should reduce the Barrack's health_points by the attack_power specified" do
       @building.damage(12)
-      expect(@building.health_points).to eq(488) # HP started at 100 but just got hit by 12 (see subject)
+      expect(@building.health_points).to eq(488) 
     end
   end
 
@@ -24,14 +24,6 @@ describe Barracks do
     it "should deal the appropriate (attack power based) damage to the Barrack unit" do
       @unit.attack!(@building)
       expect(@building.health_points).to eq(497)
-
-      # Step 1 do an attack of a unit to the building
-
-      # Step 2 check if the building got dammged the way you expect it
-      # for this: .t eq()
-
-
-
     end
   end
 

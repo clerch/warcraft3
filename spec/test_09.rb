@@ -35,14 +35,14 @@ describe Barracks do
     it "returns false if there isn't enough food" do
       # Make the barracks believe it only has 4 food items left, even though it starts with 80
       # This is done by overwriting the `food` getter method
-      expect(@barracks).to receive(:food).and_return(4)
+      expect(@barracks).to receive(:food).and_return(4) #this changed barracks food to 4
       expect(@barracks.can_train_peasant?).to be_falsey
     end
 
     it "returns false if there isn't enough gold" do
       # Make the barracks believe it only has 89 gold left, even though it starts with 1000
       # This is done by overwriting the `gold` getter method
-      expect(@barracks).to receive(:gold).and_return(89)
+      expect(@barracks).to receive(:gold).and_return(89) #this changes barracks gold to 89
       expect(@barracks.can_train_peasant?).to be_falsey
     end
   end
@@ -52,6 +52,7 @@ describe Barracks do
       expect(@barracks).to receive(:can_train_peasant?).and_return(false)
       expect(@barracks.train_peasant).to be_nil
     end
+    
     it "trains a peasant if there are enough resources" do
       expect(@barracks).to receive(:can_train_peasant?).and_return(true)
       expect(@barracks.train_peasant).to be_a(Peasant)

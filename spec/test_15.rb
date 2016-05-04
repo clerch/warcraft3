@@ -17,7 +17,7 @@ describe SiegeEngine do
   describe "#attack!" do
 
     it "should have double damage when attacking a Barracks" do
-      expect(@siege_engine).to receive(:attack_power).and_return(50)
+      expect(@siege_engine.attack_power).to eq(50)
       expect(@building).to receive(:damage).with(100)
       @siege_engine.attack!(@building)
     end

@@ -14,8 +14,6 @@ class Barracks
       @gold -= 135
       @food -= 2
       Footman.new
-    else
-      nil
    end
  end
 
@@ -53,15 +51,11 @@ class Barracks
       @food -= 3
       @lumber -= 60
       SiegeEngine.new
-    else
-      nil
    end
  end
 
   def can_train_siege_engine?
-    if gold >= 200 && food >= 3 && lumber >= 60
-      true
-    end
+    gold >= 200 && food >= 3 && lumber >= 60
   end
 
 

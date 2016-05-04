@@ -13,14 +13,14 @@ describe Unit do
 
   describe "#dead?" do
     it "It should be alive when health is positive." do
-      expect(@unit).to receive(:health_points).and_return(10) # HP started at 100 but just got hit by 12 (see subject)
-      expect(@unit.dead?).to be_falsey
+      expect(@unit).to receive(:health_points).and_return(10) #forces health_points to be 10
+      expect(@unit.dead?).to be false 
     end
   end
 
   describe "#dead?" do
     it "It should be dead when health is negative." do
-      expect(@unit).to receive(:health_points).and_return(-10) # HP started at 100 but just got hit by 12 (see subject)
+      expect(@unit).to receive(:health_points).and_return(-10) 
       expect(@unit.dead?).to be true
     end
   end

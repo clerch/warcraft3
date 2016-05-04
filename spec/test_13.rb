@@ -15,17 +15,17 @@ describe Unit do
 
   describe "#attack!" do
     it "should not attack when dead" do
-      expect(@attacker).to receive(:dead?).and_return(true)  # HP started at 100 but just got hit by 12 (see subject)
+      expect(@attacker).to receive(:dead?).and_return(true)
       expect(@attacker.attack!(@defender)).to be_falsey
     end
   
     it "should not attack a dead unit" do
-      expect(@defender).to receive(:dead?).and_return(true) # HP started at 100 but just got hit by 12 (see subject)
+      expect(@defender).to receive(:dead?).and_return(true) 
       expect(@attacker.attack!(@defender)).to be_falsey
     end
 
     it "should not attack a dead building" do
-      expect(@building).to receive(:dead?).and_return(true) # HP started at 100 but just got hit by 12 (see subject)
+      expect(@building).to receive(:dead?).and_return(true) 
       expect(@attacker.attack!(@building)).to be_falsey
     end
 

@@ -11,11 +11,13 @@ describe Peasant do
   end
 
   it "has and knows its HP, which is lower than that of a Footman" do
-    expect(@peasant.health_points).to eq(35)
+    expect(@peasant.health_points).to 
+    eq(35)
   end
 
   it "can't damage other units (no attack power)" do
-    expect(@peasant.attack_power).to eq(0)
+    expect(@peasant.attack_power).to 
+    eq(0)
   end
 
 end
